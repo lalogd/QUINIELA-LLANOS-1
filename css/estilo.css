@@ -1,4 +1,4 @@
-*{
+0*{
     margin:0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 .quiniela{
     margin: auto;
-    background-image: url("../img/J8C24.jpg");
+    background-image: url("../img/J10C24.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     max-width: 400px;
