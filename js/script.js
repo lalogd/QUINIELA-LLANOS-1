@@ -374,7 +374,7 @@ function send(){				//Envia la quiniela al whatsapp
 }
 
 // Confeti mexicano
-const canvas = document.getElementById("confetti-canvas");
+/*const canvas = document.getElementById("confetti-canvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
@@ -386,9 +386,9 @@ let confetti = [];
 function createConfetti() {
     const x = Math.random() * canvas.width;
     const y = 0;
-    const size = Math.random() * 8 + 5; // tamaño de papelitos
+    const size = Math.random() * 3 + 3; // tamaño de papelitos
     const color = colors[Math.floor(Math.random() * colors.length)];
-    const speed = Math.random() * 3 + 1;
+    const speed = Math.random() * 4 + 1;
     const tilt = Math.random() * 10 - 5;
     confetti.push({x, y, size, color, speed, tilt});
 }
@@ -421,8 +421,58 @@ function animateConfetti() {
     requestAnimationFrame(animateConfetti);
 }
 
-setInterval(createConfetti, 150); // cantidad de confeti
+setInterval(createConfetti, 100); // cantidad de confeti
 animateConfetti();
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});*/
+
+// Lluvia de Halloween
+const canvas = document.getElementById("halloween-canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Colores o emojis temáticos
+const halloweenItems = ["🎃", "👻", "🦇"]; // calabaza, fantasma, murciélago
+let items = [];
+
+function createItem() {
+    const x = Math.random() * canvas.width;
+    const y = 0;
+    const size = Math.random() * 10 + 10;
+    const speed = Math.random() * 2 + 1;
+    const char = halloweenItems[Math.floor(Math.random() * halloweenItems.length)];
+    items.push({x, y, size, speed, char});
+}
+
+function drawItems() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = "bold 30px Arial";
+    ctx.textAlign = "center";
+    for (let item of items) {
+        ctx.font = `${item.size}px Arial`;
+        ctx.fillText(item.char, item.x, item.y);
+        item.y += item.speed;
+        item.x += Math.sin(item.y / 20); // movimiento lateral
+        if (item.y > canvas.height) {
+            item.y = 0;
+            item.x = Math.random() * canvas.width;
+        }
+    }
+}
+
+function animateItems() {
+    drawItems();
+    requestAnimationFrame(animateItems);
+}
+
+// Crear nuevos elementos cada 150 ms
+setInterval(createItem, 1000);
+animateItems();
 
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
@@ -430,5 +480,7 @@ window.addEventListener("resize", () => {
 });
 
 
+
 window.addEventListener("load",start,false);
+
 
