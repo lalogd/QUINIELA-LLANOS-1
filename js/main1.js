@@ -428,53 +428,53 @@ window.addEventListener("resize", () => {
 });*/
 
 // Lluvia de Halloween
-const canvas = document.getElementById("halloween-canvas");
-const ctx = canvas.getContext("2d");
+//const canvas = document.getElementById("halloween-canvas");
+//const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+//canvas.width = window.innerWidth;
+//canvas.height = window.innerHeight;
 
 // Colores o emojis temáticos
-const halloweenItems = ["🎃", "👻", "🦇"]; // calabaza, fantasma, murciélago
-let items = [];
+//const halloweenItems = ["🎃", "👻", "🦇"]; // calabaza, fantasma, murciélago
+//let items = [];
 
-function createItem() {
-    const x = Math.random() * canvas.width;
-    const y = 0;
-    const size = Math.random() * 10 + 10;
-    const speed = Math.random() * 2 + 1;
-    const char = halloweenItems[Math.floor(Math.random() * halloweenItems.length)];
-    items.push({x, y, size, speed, char});
+//function createItem() {
+    //const x = Math.random() * canvas.width;
+    //const y = 0;
+    //const size = Math.random() * 10 + 10;
+    //const speed = Math.random() * 2 + 1;
+    //const char = halloweenItems[Math.floor(Math.random() * halloweenItems.length)];
+    //items.push({x, y, size, speed, char});
 }
 
-function drawItems() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = "bold 30px Arial";
-    ctx.textAlign = "center";
-    for (let item of items) {
-        ctx.font = `${item.size}px Arial`;
-        ctx.fillText(item.char, item.x, item.y);
-        item.y += item.speed;
-        item.x += Math.sin(item.y / 20); // movimiento lateral
-        if (item.y > canvas.height) {
-            item.y = 0;
-            item.x = Math.random() * canvas.width;
+//function drawItems() {
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.font = "bold 30px Arial";
+    //ctx.textAlign = "center";
+    //for (let item of items) {
+        //ctx.font = `${item.size}px Arial`;
+        //ctx.fillText(item.char, item.x, item.y);
+        //item.y += item.speed;
+        //item.x += Math.sin(item.y / 20); // movimiento lateral
+        //if (item.y > canvas.height) {
+            //item.y = 0;
+            //item.x = Math.random() * canvas.width;
         }
     }
 }
 
-function animateItems() {
-    drawItems();
-    requestAnimationFrame(animateItems);
+//function animateItems() {
+    //drawItems();
+    //requestAnimationFrame(animateItems);
 }
 
 // Crear nuevos elementos cada 150 ms
-setInterval(createItem, 1000);
-animateItems();
+//setInterval(createItem, 1000);
+//animateItems();
 
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+//window.addEventListener("resize", () => {
+    //canvas.width = window.innerWidth;
+    //canvas.height = window.innerHeight;
 });
 
 
