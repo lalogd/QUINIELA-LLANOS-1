@@ -5,7 +5,7 @@ let resultStorage = "results";
 let aliasStorage = "alias";
 
 let price = 0;  //replace *0
-let tel = "525647806645";
+let tel = "525556209648";
 let nPartidos = 10;
 let partidoSup = false;
 
@@ -375,6 +375,7 @@ function send(){				//Envia la quiniela al whatsapp
 
 
 window.addEventListener("load",start,false);
+
 
 
 
