@@ -6,7 +6,7 @@ let resultStorage = "results";
 
 
 let price = 0;  //replace *25
-let tel = "525647806645";
+let tel = "525556209648";
 let nPartidos = 10;
 let partidoSup = false;
 
@@ -431,5 +431,6 @@ window.addEventListener("resize", () => {
 
 
 window.addEventListener("load",start,false);
+
 
 
