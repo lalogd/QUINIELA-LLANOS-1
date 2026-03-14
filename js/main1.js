@@ -5,7 +5,7 @@ let resultStorage = "results";
 let aliasStorage = "alias";
 
 let price = 0;  //replace *0
-let tel = "525556209648";
+let tel = "525664910304";
 let nPartidos = 10;
 let partidoSup = false;
 
